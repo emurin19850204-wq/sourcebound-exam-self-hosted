@@ -187,7 +187,12 @@
 
 ### 自己ホスト化の監査補強
 
-- [ ] MinIO/AWS S3などのS3互換ストレージドライバを実装し、STORAGE_DRIVER切替をテストする
-- [ ] passwordHash列の有効なDrizzle migration SQLを確認し、初回起動で適用できることを確認する
-- [ ] 自己ホスト版GitHubリポジトリを作成・pushし、READMEとCIワークフローを確認する
-- [ ] GitHub Actionsのcheck/test/build実行結果を確認する
+- [x] MinIO/AWS S3などのS3互換ストレージドライバを実装し、STORAGE_DRIVER切替をテストする
+- [x] passwordHash列の有効なDrizzle migration SQLを生成・確認し、Docker Compose起動時に適用する設定を追加する
+- [x] 自己ホスト版GitHubリポジトリを作成・pushし、READMEとCIワークフローを確認する
+- [x] GitHub Actionsのcheck/test/build実行結果を確認する
+
+### 自己ホスト最終実証
+
+- [x] STORAGE_DRIVER=local と STORAGE_DRIVER=s3 の storagePut 動作をテストする
+- [ ] 自己ホスト専用DBでmigrationを実行し、users.passwordHash列の適用を確認する（現在の作業環境には隔離済みMySQLがないため未実行）
