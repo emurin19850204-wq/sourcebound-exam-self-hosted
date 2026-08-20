@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787161863156,
+      "tag": "0000_new_king_bedlam",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787162055466,
+      "tag": "0001_warm_blue_blade",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787163977917,
+      "tag": "0002_ambitious_lady_mastermind",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787180693512,
+      "tag": "0003_eager_hellfire_club",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787233203359,
+      "tag": "0004_good_jackal",
+      "breakpoints": true
+    }
+  ]
+}

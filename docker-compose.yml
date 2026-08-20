@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: sourcebound_exam
+      MYSQL_USER: sourcebound
+      MYSQL_PASSWORD: sourcebound
+      MYSQL_ROOT_PASSWORD: change-root-password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pchange-root-password"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: mysql://sourcebound:sourcebound@db:3306/sourcebound_exam
+      STORAGE_DIR: /app/data/uploads
+    command: sh -c "pnpm db:push && node dist/index.js"
+    ports:
+      - "3000:3000"
+    volumes:
+      - uploads_data:/app/data/uploads
+volumes:
+  mysql_data:
+  uploads_data:

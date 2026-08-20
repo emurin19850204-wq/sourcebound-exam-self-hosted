@@ -1,0 +1,1 @@
+ALTER TABLE `questions` MODIFY COLUMN `status` enum('draft','approved','rejected','archived') NOT NULL DEFAULT 'draft';
